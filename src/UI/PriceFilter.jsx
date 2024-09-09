@@ -24,7 +24,7 @@ const PriceFilter = () => {
             defaultValue={70}
             aria-label="Small"
             valueLabelDisplay="auto"
-            // color="#FC3A74"
+           
             
           />
           <ValueIndicator leftOff={calculate(values[0], MIN, MAX)}>
