@@ -140,7 +140,7 @@ const ContainerDiv = styled.div`
   const StyledLabel = styled.label`
     cursor: pointer;
     img{
-      margin-top: 65px;
+      margin-top: 80px;
     }
   `;
   
