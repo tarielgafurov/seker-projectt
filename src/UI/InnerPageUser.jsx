@@ -30,8 +30,8 @@ const InnerPageUser = () => {
         </StyleApple>
 
         <Senna>
-        <h4 style={{color:"#878787",fontSize:"24px"}}>256Gb</h4>
-        <h2 style={{color:"#9292EF"}}>116 000 сом</h2>
+        <p style={{color:"#878787",fontSize:"24px"}}>256Gb</p>
+        <h1 style={{color:"#9292EF"}}>116 000 сом</h1>
         </Senna>
 
         <StyleColors>
@@ -43,10 +43,12 @@ const InnerPageUser = () => {
         </StyleDiv>
         </StyleColors>
         <StyleCounter>
-        <h3>Количество :</h3>
+        <p style={{fontSize:"20px"}}>Количество :</p>
+        <div style={{display:"flex", alignItems: "center"}}>
         <button>🗑</button>
         <h2>2</h2>
         <button>+</button>
+        </div>
         </StyleCounter>
       </GlobalStyle>
     </StyleGloball>
@@ -108,10 +110,7 @@ justify-content: space-around;
 align-items: center;
 margin-left: 40px;
 margin-top: 20px;
-img{
-    /* width: 400px; */
-    /* height: 400px; */
-}
+
   `
 
 const StyleColors = styled.div`
@@ -133,7 +132,8 @@ const StyleColors = styled.div`
   `
 const StyleCounter = styled.div`
 display: flex;
-width: 400px;
+justify-content: space-between;
+width: 270px;
 align-items: center;
 margin-bottom: -100px;
 h2{
