@@ -1,5 +1,5 @@
 
-const API_URL = 'https://jsonplaceholder.typicode.com/';
+const API_URL = 'http://43.204.218.113/api/v1/';
 
 export const fetchFromJsonPlaceholder = async ({ endpoint, method = 'GET', data, customHeaders = {} }) => {
     console.log(method);

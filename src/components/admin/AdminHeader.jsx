@@ -26,7 +26,7 @@ const AdminHeader = () => {
       <ModalMenu/>
       </MenuStyle>
       <DivSekerStyled>
-      <h3>Seker</h3>
+      <h3> Admin</h3>
       <p>твой лучший выбор</p>
       </DivSekerStyled>
       <SearchInput search={true}/>
