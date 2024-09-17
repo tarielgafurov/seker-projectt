@@ -78,7 +78,7 @@ const ImageUploader = () => {
     }
 
     setImageStates(newStates);
-  };
+  };  
 
   return (
     <ContainerDiv>
