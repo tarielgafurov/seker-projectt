@@ -4,7 +4,7 @@ import styled from "styled-components";
 import gogle from "../assets/icons/gogle.png";
 import aplle from "../assets/icons/apple.logo.png";
 import { useNavigate } from "react-router-dom";
-import { login } from "../store/autSlice/authSlice";
+import { login } from "../store/authSlice";
 
 const Modal = ({onClose}) => {
   const [email, setEmail] = useState("");
