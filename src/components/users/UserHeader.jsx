@@ -71,6 +71,7 @@ const ContainerSeker = styled.div`
   margin: auto;
   width: 1170px;
   height: 56px;
+  padding: 20px;
 `
 
 const MenuStyle = styled.div`
