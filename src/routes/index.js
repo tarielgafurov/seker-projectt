@@ -1,15 +1,15 @@
 
 import { Route, Routes } from "react-router-dom"
-import UserHeader from "../components/users/UserHeader"
-import AdminHeader from "../components/admin/AdminHeader"
+import AdminPage from "../components/admin/AdminPage"
+import UsersPage from "../components/users/UsersPage"
 
 const SekerProject = ()=>{
     return (
         <Routes>
-            <Route path="/" element={<UserHeader/>}></Route>
-            <Route path="/admin" element={<AdminHeader/>}></Route>
+            <Route path="/" element={<UsersPage/>}></Route>
+            <Route path="/admin" element={<AdminPage/>}></Route>
         </Routes>
     )
 }
-
+ 
 export default SekerProject 
