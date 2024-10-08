@@ -1,21 +1,32 @@
+// import store from "../store/store";
+
 const API_URL = 'http://43.204.218.113/api/v1/';
-const token = localStorage.getItem('token')
-console.log(token);
+let store
 
 
-export const fetchApi = async ({ endpoint, method = 'GET', data, customHeaders = {} }) => {
+export const testStore = (formSt)=>{
+    store = formSt
+}
+console.log(store);
+
+
+
+export const fetchApi = async({ endpoint, method = 'GET', data, customHeaders = {} }) => {
+    const token = store.getState().auth.token || localStorage.getItem('token');
+    console.log(token);
+    
     console.log(method);
 
     try {
-        // Башкыларды даярдоо
+        // Башкалардын даярдыгын көрүү
         let headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Authorization': `Bearer ${token}`,
             ...customHeaders 
         };
-        if(token){
-            
-        }
+        console.log(headers);
+        
+
         // Запрос опцияларын даярдоо
         let options = {
             method: method,
@@ -34,7 +45,7 @@ export const fetchApi = async ({ endpoint, method = 'GET', data, customHeaders =
             throw new Error(`Запрос катасы: ${response.status} - ${response.statusText}`);
         }
 
-        // Жоопту JSON форматка өтүп кайтаруу
+        // Жоопту JSON форматка өткөрүп кайтаруу
         const result = await response.json();
         return result;
     } catch (error) {
@@ -42,47 +53,3 @@ export const fetchApi = async ({ endpoint, method = 'GET', data, customHeaders =
         throw error;
     }
 }
-
-
-
-
-
-// const API_URL = 'http://43.204.218.113/api/v1/';
-
-// export const fetchApi = async ({ endpoint, method = 'GET', data, customHeaders = {} }) => {
-//     console.log(method);
-    
-//     try {
-//         // Башкыларды даярдоо
-//         let headers = {
-//             'Content-Type': 'application/json',
-//             // ...customHeaders 
-//         };
-
-        
-//         // Запрос опцияларын даярдоо
-//         let options = {
-//             method: method,
-//             headers: headers,
-//         };
-
-//         if (data) {
-//             options.body = JSON.stringify(data);
-//         }
-
-//         // Асинхрондуу запрос жөнөтүү
-//         const response = await fetch(`${API_URL}${endpoint}`, options);
-
-//         // Жоопту текшерүү
-//         if (!response.ok) {
-//             throw new Error(`Запрос катасы: ${response.status} - ${response.statusText}`);
-//         }
-
-//         // Жоопту JSON форматка өтүп кайтаруу
-//         const result = await response.json();
-//         return result;
-//     } catch (error) {
-//         console.error("Запрос катасы:", error);
-//         throw error;
-//     }
-// }
